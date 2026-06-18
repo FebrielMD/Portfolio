@@ -43,7 +43,7 @@ export default function Home() {
               Febriel Mezia D
             </h1>
             <p className="text-white text-sm md:text-base font-medium opacity-80">
-              1,042,394 baris kode ditulis &bull; Software Engineer &bull;
+              1,042,394 baris kode ditulis &bull; Pengangguran Sibuk &bull;
               Cimahi
             </p>
           </div>
