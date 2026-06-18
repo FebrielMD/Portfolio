@@ -26,7 +26,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-end gap-6 relative z-10">
           <div className="w-48 h-48 md:w-60 md:h-60 rounded-full shadow-2xl overflow-hidden shrink-0">
             <Image
-              src="/images/Febriel-Mezia-Dinaldi.jpg"
+              src="/images/Febriel-culture.jpg"
               alt="Febriel"
               width={240}
               height={240}
