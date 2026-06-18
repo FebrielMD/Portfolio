@@ -1,13 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { Play, CheckCircle2, Clock, MoreHorizontal, Mail } from "lucide-react";
+import {
+  Play,
+  CheckCircle2,
+  Clock,
+  MoreHorizontal,
+  Mail,
+  ExternalLink,
+} from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-import { projects, experiences, technicalSkills, softSkills } from "@/lib/data";
+import {
+  projects,
+  experiences,
+  technicalSkills,
+  softSkills,
+  certificates,
+} from "@/lib/data";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background pb-24 font-sans">
+    <main className="min-h-screen bg-background pb-24 font-sans overflow-x-hidden">
       {/* 1. HERO SECTION (ARTIST PROFILE STYLE) */}
       <section className="relative pt-32 pb-8 px-6 md:px-10 bg-linear-to-b from-[#4a5568] to-background">
         <div className="flex flex-col md:flex-row items-end gap-6 relative z-10">
@@ -24,10 +37,10 @@ export default function Home() {
           <div className="flex flex-col gap-2 pb-2">
             <div className="flex items-center gap-2 text-sm font-medium text-white">
               <CheckCircle2 className="w-5 h-5 text-[#3D91F4] fill-white" />
-              <span>Verified Developer</span>
+              <span>Fresh Graduate</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white mb-4">
-              Febriel M.D.
+              Febriel Mezia D
             </h1>
             <p className="text-white text-sm md:text-base font-medium opacity-80">
               1,042,394 baris kode ditulis &bull; Software Engineer &bull;
@@ -85,6 +98,60 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2.5. CERTIFICATIONS SECTION */}
+      <section id="certificates" className="px-6 md:px-10 mt-16">
+        <h2 className="text-2xl font-bold text-white mb-6">
+          Certifications & Licenses
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {certificates.map((cert, i) => (
+            <div
+              key={i}
+              className="bg-surface hover:bg-surfaceHover p-4 rounded-lg transition-all duration-300 group cursor-pointer"
+            >
+              {/* Thumbnail Sertifikat (Rasio 16:9 / Landscape) */}
+              <div className="relative w-full aspect-video rounded-md bg-zinc-800 mb-4 overflow-hidden shadow-lg flex items-center justify-center">
+                {/* Jika nanti punya gambar asli, ganti div ini dengan tag <img src={cert.image} /> */}
+                <div className="w-full h-full bg-linear-to-br from-[#2b2b2b] to-[#121212] flex flex-col items-center justify-center">
+                  <span className="text-5xl opacity-50 drop-shadow-md group-hover:scale-110 transition-transform duration-300">
+                    {cert.image}
+                  </span>
+                </div>
+
+                {/* Efek Hover Spotify (Faded Blur + Icon) */}
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]"
+                >
+                  <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center hover:scale-105 transition-transform">
+                    <ExternalLink className="w-5 h-5 text-white" />
+                  </div>
+                </a>
+              </div>
+
+              {/* Teks Info Sertifikat */}
+              <h3
+                className="text-white font-bold line-clamp-1"
+                title={cert.title}
+              >
+                {cert.title}
+              </h3>
+              <p className="text-sm text-gray-400 mt-1 truncate">
+                {cert.issuer}
+              </p>
+              <div className="flex items-center gap-2 mt-2">
+                <span className="text-[10px] font-bold tracking-wider text-black bg-white px-2 py-0.5 rounded-sm uppercase">
+                  License
+                </span>
+                <span className="text-xs text-gray-500">{cert.date}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* 3. TRACKLIST (EXPERIENCE SECTION) */}
       <section id="experience" className="px-6 md:px-10 mt-16 max-w-5xl">
         <h2 className="text-2xl font-bold text-white mb-6">
@@ -113,7 +180,7 @@ export default function Home() {
                   <Play className="w-4 h-4 fill-white" />
                 </div>
 
-                <div className="pr-4">
+                <div className=" min-w-0">
                   <div className="text-white font-medium truncate">
                     {exp.title}
                   </div>

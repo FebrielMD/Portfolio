@@ -17,7 +17,7 @@ export default function PlayerBar() {
       <div className="flex items-center gap-4 w-1/3 min-w-45">
         <div className="w-14 h-14 bg-surface rounded flex items-center justify-center overflow-hidden">
           <Image
-            src="/images/Febriel-Mezia-Dinaldi.jpg"
+            src="/images/Febriel-SZA.jpg"
             alt="Profile"
             width={56}
             height={56}

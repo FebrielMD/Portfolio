@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand: #1db954;
+  --color-background: #121212;
+  --color-surface: #181818;
+  --color-surfaceHover: #282828;
+}
+
 :root {
   color-scheme: dark;
 }

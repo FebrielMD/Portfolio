@@ -99,3 +99,33 @@ export const projects = [
     demo: "#",
   },
 ];
+export const certificates = [
+  {
+    title: "Sertifikat Kompetensi Keahlian (LSP-BNSP)",
+    issuer: "Badan Nasional Sertifikasi Profesi (Ujikom RPL)",
+    date: "Mei 2026",
+    image: "🎓",
+    link: "#", // Link ke PDF atau gambar sertifikatmu nanti
+  },
+  {
+    title: "Belajar Membuat Aplikasi Flutter untuk Pemula",
+    issuer: "Dicoding Indonesia",
+    date: "Maret 2026",
+    image: "📱",
+    link: "#",
+  },
+  {
+    title: "Memulai Pemrograman dengan Python",
+    issuer: "Dicoding Indonesia",
+    date: "Jan 2025",
+    image: "🐍",
+    link: "#",
+  },
+  {
+    title: "Responsive Web Design",
+    issuer: "freeCodeCamp",
+    date: "Agt 2024",
+    image: "🌐",
+    link: "#",
+  },
+];
